@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+
+<main class="container">
+  <h2>Login</h2>
+
+  <input type="email" placeholder="E-mail">
+  <input type="password" placeholder="Senha">
+  <button class="btn">Entrar</button>
+
+  <hr><br>
+
+  <!-- Botão Google -->
+  <div id="g_id_onload"
+       data-client_id="471396317495-4q7eu7pqbd2i1panjg6kf5iauf627j8s.apps.googleusercontent.com"
+       data-callback="handleCredentialResponse">
+  </div>
+
+  <div class="g_id_signin" data-type="standard"></div>
+
+</main>
+
+<script>
+function handleCredentialResponse(response) {
+    console.log("JWT:", response.credential);
+
+    alert("Login com Google realizado com sucesso!");
+
+    window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>

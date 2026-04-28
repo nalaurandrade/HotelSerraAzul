@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Pagamento</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <h2>Pagamento</h2>
+
+    <button class="btn" onclick="mostrarPix()">PIX</button>
+    <button class="btn" onclick="mostrarCartao()">Cartão</button>
+    <button class="btn" onclick="mostrarCarteira()">Carteira Digital</button>
+
+    <!-- PIX -->
+    <div id="pix" class="card hidden">
+      <h3>Pagamento via PIX</h3>
+      <p>Chave PIX: hotelserraazul@pix.com</p>
+      <input type="text" placeholder="Nome do pagador">
+      <button class="btn">Confirmar</button>
+    </div>
+
+    <!-- Cartão -->
+    <div id="cartao" class="card hidden">
+      <h3>Pagamento com Cartão</h3>
+      <input type="text" placeholder="Nome no cartão">
+      <input type="text" placeholder="Número do cartão">
+      <input type="text" placeholder="Validade">
+      <input type="text" placeholder="CVV">
+      <button class="btn">Confirmar</button>
+    </div>
+
+    <!-- Carteira -->
+    <div id="carteira" class="card hidden">
+      <h3>Carteira Digital</h3>
+      <input type="text" placeholder="E-mail da carteira digital">
+      <button class="btn">Confirmar</button>
+    </div>
+  </main>
+
+  <script>
+    function esconderTudo() {
+      document.getElementById('pix').classList.add('hidden');
+      document.getElementById('cartao').classList.add('hidden');
+      document.getElementById('carteira').classList.add('hidden');
+    }
+
+    function mostrarPix() {
+      esconderTudo();
+      document.getElementById('pix').classList.remove('hidden');
+    }
+
+    function mostrarCartao() {
+      esconderTudo();
+      document.getElementById('cartao').classList.remove('hidden');
+    }
+
+    function mostrarCarteira() {
+      esconderTudo();
+      document.getElementById('carteira').classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
