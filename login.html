@@ -2,9 +2,11 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Hotel Serra Azul</title>
   <link rel="stylesheet" href="style.css">
 
+  <!-- Google Auth -->
   <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
@@ -14,28 +16,42 @@
 
   <input type="email" placeholder="E-mail">
   <input type="password" placeholder="Senha">
-  <button class="btn">Entrar</button>
+  
+  <button class="btn" onclick="loginNormal()">Entrar</button>
 
   <hr><br>
 
-  <!-- Botão Google -->
+  <!-- Google Auth -->
   <div id="g_id_onload"
        data-client_id="471396317495-4q7eu7pqbd2i1panjg6kf5iauf627j8s.apps.googleusercontent.com"
-       data-callback="handleCredentialResponse">
+       data-callback="handleCredentialResponse"
+       data-auto_prompt="false">
   </div>
 
-  <div class="g_id_signin" data-type="standard"></div>
+  <div class="g_id_signin"
+       data-type="standard"
+       data-size="large"
+       data-theme="outline"
+       data-text="signin_with"
+       data-shape="rectangular"
+       data-logo_alignment="left">
+  </div>
 
 </main>
 
 <script>
-function handleCredentialResponse(response) {
-    console.log("JWT:", response.credential);
+  function loginNormal() {
+      alert("Login realizado com sucesso!");
+      window.location.href = "index.html";
+  }
 
-    alert("Login com Google realizado com sucesso!");
+  function handleCredentialResponse(response) {
+      console.log("JWT:", response.credential);
 
-    window.location.href = "index.html";
-}
+      alert("Login com Google realizado com sucesso!");
+
+      window.location.href = "index.html";
+  }
 </script>
 
 </body>
